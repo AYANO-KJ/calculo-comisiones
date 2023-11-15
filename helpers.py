@@ -69,7 +69,7 @@ class Comisiones:
                 'diamantes': diamantes,
             }
         elif self.tipo == "reconsumo":
-            new_total_comisiones =  comision_binario - comision_mlm
+            new_total_comisiones =  comision_binario + comision_mlm
             new_beneficio_dinero = dinero_ingresado - new_total_comisiones
             new_beneficio_porcentaje = (new_beneficio_dinero / dinero_ingresado) * 100
             return {
