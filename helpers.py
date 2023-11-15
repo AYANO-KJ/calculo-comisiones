@@ -42,7 +42,7 @@ class Comisiones:
             elif rango['name'] == 'Diamante':
                 diamantes += self.__personasPorNivel(i + 1)
         
-        dinero_ingresado = self.__dineroIngresado(self.pv, self.precio_13_puntos, self.__totalAfiliados(self.niveles)) - (comision_binario + comision_mlm)
+        dinero_ingresado = self.__dineroIngresado(self.pv, self.precio_13_puntos, self.__totalAfiliados(self.niveles))
         comision_patrocinio = (self.__totalAfiliados(self.niveles) - 1) * self.pv * (self.porcentaje_patrocino)
         # total_comisiones = comision_binario + comision_mlm + comision_patrocinio
         total_comisiones = comision_binario + comision_patrocinio
@@ -94,6 +94,7 @@ class Comisiones:
         return pv * afiliados
 
     def __dineroIngresado(self, pv: int, paquete: int, afiliados: int) -> int:
+        print(pv, paquete, afiliados)
         return pv * (paquete / 13) * afiliados
 
     def __totalAfiliados(self, niveles: int) -> int:
